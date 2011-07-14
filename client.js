@@ -1,17 +1,16 @@
-var musicData = $('.active').last().children('a[class^="queueSong"]');
-var song = musicData[0].text;
-var artist = musicData[1].text;
-console.log(song, artist);
+var song = Grooveshark._lastStatus.activeSong.SongName;
+var artist = Grooveshark._lastStatus.activeSong.ArtistName;
 
 $(function(){
 	$.ajax({
-	    url: 'http://lyrics-service.herokuapp.com/?music=Hotel&artist=Eagles',
+	    url: 'http://lyrics-service.herokuapp.com/?music='+encodeURIComponent(song)+'&artist='+encodeURIComponent(artist),
 	    dataType: 'jsonp',
 	    crossDomain: true,
 	    jsonp: false,
 	    jsonpCallback: 'result',
 	    success: function(data) {
-	      $('#lyrics').html(data.lyrics);
+	      console.log(data);
+	      $('#capital').html(data.lyrics);
 	    }
 	});
 });
