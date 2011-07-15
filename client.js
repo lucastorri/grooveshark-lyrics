@@ -1,4 +1,5 @@
 var songInfo = function(){
+	if (Grooveshark._lastStatus == null ) return null;
 	return{
 		music: Grooveshark._lastStatus.activeSong.SongName,
 		artist: Grooveshark._lastStatus.activeSong.ArtistName
@@ -6,7 +7,7 @@ var songInfo = function(){
 };
 var info = songInfo();
 
-var adjustStyles = (function(){
+var adjustStyles = function(){
 	$('#capital').css('width', '280px');
 	$('body').resize(function(){
 		$('#application').css('width', $('body').width() - $('#capital').width());	
@@ -20,11 +21,11 @@ var adjustStyles = (function(){
   		$('#capitalPane').css('height', $('#main').height() - 50);
 	});
 	$('#capitalPane').css('overflow', 'auto');
-})();
+};
 
 setInterval(function(){
 	var currentSong = songInfo();
-	if(currentSong != info){
+	if(currentSong != null && currentSong != info){
 		$.ajax({
 	    	url: 'http://lyrics-service.herokuapp.com/?music='+encodeURIComponent(currentSong.music)+'&artist='+encodeURIComponent(currentSong.artist),
 	    	dataType: 'jsonp',
