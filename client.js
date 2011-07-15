@@ -7,7 +7,7 @@ var songInfo = function(){
 var info = songInfo();
 
 var adjustStyles = (function(){
-	$('head').append('<link rel="stylesheet" type="text/css" href="https://raw.github.com/nettofarah/grooveshark-lyrics/client/client.css" />');
+	$('head').append($('<link rel="stylesheet" type="text/css" href="https://raw.github.com/nettofarah/grooveshark-lyrics/client/client.css" />'));
 	$('body').resize(function(){
 		$('#application').css('width', $('body').width() - $('#capital').width());	
 	});
