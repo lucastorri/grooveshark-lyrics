@@ -4,10 +4,20 @@ var songInfo = function(){
 		artist: Grooveshark._lastStatus.activeSong.ArtistName
 	}; 
 };
-
-$('#capital p').css('margin', '10px');
-
 var info = songInfo();
+
+var adjustStyles = (function(){
+	$('#application').css('width', '1000px'); 
+	$('#capital').css('width', '280px');
+	$('#remove_capital_button').remove();
+	$('#mainContainer').css('background', 'none');
+	$('#capital_header').css('text-align', 'center');
+	$('#capitalPane').css('height', $('#main').height() - 50);
+	$('#main').resize(function() {
+  		$('#capitalPane').css('height', $('#main').height() - 50);
+	});
+	$('#capitalPane').css('overflow', 'auto');
+})();
 
 setInterval(function(){
 	var currentSong = songInfo();
@@ -19,13 +29,10 @@ setInterval(function(){
 	    	jsonp: false,
 	    	jsonpCallback: 'result',
 	    	success: function(data) {
-	      		$('#capital').html(data.lyrics);
+	      		$('#capitalPane').html(data.lyrics);
+	      		$('#capitalPane p').css('margin', '10px');
+	      		$('#capital_header').html('<p>'+ data.artist + ' - ' + data.music + '</p>');
 	    	}
 		});	
 	}
 }, 5000);
-
-
-$.getScript("ajax/test.js", function() {
-  alert("Load was performed.");
-});
