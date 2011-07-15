@@ -7,8 +7,11 @@ var songInfo = function(){
 var info = songInfo();
 
 var adjustStyles = (function(){
-	$('#application').css('width', '1000px'); 
 	$('#capital').css('width', '280px');
+	$('body').resize(function(){
+		$('#application').css('width', $('body').width() - $('#capital').width());	
+	});
+	$('#application').css('width', $('body').width() - $('#capital').width()); 
 	$('#remove_capital_button').remove();
 	$('#mainContainer').css('background', 'none');
 	$('#capital_header').css('text-align', 'center');
@@ -35,4 +38,4 @@ setInterval(function(){
 	    	}
 		});	
 	}
-}, 5000);
+}, 2000);
