@@ -19,7 +19,7 @@ var adjustStyles = (function(){
 	});
 })();
 
-setInterval(function(){
+(setInterval(function(){
 	var currentSong = songInfo();
 	if(currentSong != info){
 		$.ajax({
@@ -34,4 +34,4 @@ setInterval(function(){
 	    	}
 		});	
 	}
-}, 2000);
+}, 2000));

@@ -1,27 +1,27 @@
 #capital{
-	width: 280px;
+	width: 280px !important;
 }
 
 #mainContainer{
-	background: none;
+	background: none !important;
 }
 
 #capital_header{
-	text-align: center;
+	text-align: center !important;
 }
 
 #capitalPane{
-	overflow: auto;
+	overflow: auto !important;
 }
 
 #capitalPane p{
-	margin: 10px;
+	margin: 10px !important;
 }
 
 #capital_header > p{
-	text-align: center;
+	text-align: center !important;
 }
 
 #capital_header p:first{
-	padding-top: 5px;
+	padding-top: 5px !important;
 }
