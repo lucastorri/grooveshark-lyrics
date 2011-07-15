@@ -6,6 +6,7 @@ var songInfo = function(){
 	}; 
 };
 var info = songInfo();
+var adjusted = false;
 
 var adjustStyles = function(){
 	$('#capital').css('width', '280px');
@@ -21,11 +22,15 @@ var adjustStyles = function(){
   		$('#capitalPane').css('height', $('#main').height() - 50);
 	});
 	$('#capitalPane').css('overflow', 'auto');
+	adjusted = true;
 };
 
-setInterval(function(){
+(setInterval(function(){
 	var currentSong = songInfo();
+
 	if(currentSong != null && currentSong != info){
+		if (!adjusted) adjustStyles();
+
 		$.ajax({
 	    	url: 'http://lyrics-service.herokuapp.com/?music='+encodeURIComponent(currentSong.music)+'&artist='+encodeURIComponent(currentSong.artist),
 	    	dataType: 'jsonp',
@@ -40,5 +45,7 @@ setInterval(function(){
 	      		$('#capital_header p:first').css('padding-top', '5px');
 	    	}
 		});	
+
 	}
-}, 2000);
+
+}, 2000));
