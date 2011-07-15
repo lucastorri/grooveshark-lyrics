@@ -34,7 +34,9 @@ setInterval(function(){
 	    	success: function(data) {
 	      		$('#capitalPane').html(data.lyrics);
 	      		$('#capitalPane p').css('margin', '10px');
-	      		$('#capital_header').html('<p>'+ data.artist + ' - ' + data.music + '</p>');
+	      		$('#capital_header').html('<p>'+ data.artist + '</p><p><b>' + data.music + '</b></p>');
+	      		$('#capital_header > p').css('text-align', 'center');
+	      		$('#capital_header p:first').css('padding-top', '5px');
 	    	}
 		});	
 	}
