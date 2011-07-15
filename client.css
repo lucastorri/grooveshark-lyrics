@@ -1,0 +1,27 @@
+#capital{
+	width: 280px;
+}
+
+#mainContainer{
+	background: none;
+}
+
+#capital_header{
+	text-align: center;
+}
+
+#capitalPane{
+	overflow: auto;
+}
+
+#capitalPane p{
+	margin: 10px;
+}
+
+#capital_header > p{
+	text-align: center;
+}
+
+#capital_header p:first{
+	padding-top: 5px;
+}
