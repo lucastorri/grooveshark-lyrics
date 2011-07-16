@@ -1,3 +1,5 @@
+var played = 0;
+
 var songInfo = function(){
 	if (!Grooveshark._lastStatus) return null;
 	return{
@@ -6,10 +8,10 @@ var songInfo = function(){
 	}; 
 };
 
-var musicEquality = function(current, old){
+var sameMusic = function(current, old){
 	if (!old) return false;
-	return current.music == old.music;
-}
+	return current.music == old.music && played > 0;
+};
 
 var old = songInfo();
 var adjusted = false;
@@ -35,8 +37,9 @@ var adjustStyles = function(){
 	var currentSong = songInfo();
 	if (!currentSong) return;
 	
-	if(!musicEquality(currentSong, old)){
+	if(!sameMusic(currentSong, old)){
 		old = currentSong;
+		played++;
 
 		if (!adjusted) adjustStyles();
 		
