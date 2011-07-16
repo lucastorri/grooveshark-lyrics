@@ -1,11 +1,17 @@
 var songInfo = function(){
-	if (Grooveshark._lastStatus == null ) return null;
+	if (!Grooveshark._lastStatus) return null;
 	return{
 		music: Grooveshark._lastStatus.activeSong.SongName,
 		artist: Grooveshark._lastStatus.activeSong.ArtistName
 	}; 
 };
-var info = songInfo();
+
+var musicEquality = function(current, old){
+	if (!old) return false;
+	return current.music == old.music;
+}
+
+var old = songInfo();
 var adjusted = false;
 
 var adjustStyles = function(){
@@ -27,10 +33,13 @@ var adjustStyles = function(){
 
 (setInterval(function(){
 	var currentSong = songInfo();
-
-	if(currentSong != null && currentSong != info){
+	if (!currentSong) return;
+	
+	if(!musicEquality(currentSong, old)){
+		old = currentSong;
+		console.log('oi!');
 		if (!adjusted) adjustStyles();
-
+		
 		$.ajax({
 	    	url: 'http://lyrics-service.herokuapp.com/?music='+encodeURIComponent(currentSong.music)+'&artist='+encodeURIComponent(currentSong.artist),
 	    	dataType: 'jsonp',
