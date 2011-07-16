@@ -6,17 +6,24 @@
 
   <script type="text/javascript">
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-24573781-1']);
-  _gaq.push(['_trackPageview']);
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-24573781-1']);
+    _gaq.push(['_trackPageview']);
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
 
-</script>
+  </script>
+
+  <meta property="og:title" content="Grooveshark-Lyrics" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://nettofarah.github.com/grooveshark-lyrics/" />
+  <meta property="og:image" content="" />
+  <meta property="og:site_name" content="Grooveshark-Lyrics" />
+  <meta property="fb:admins" content="100001056150645" />
 
 </head>
 <body>
@@ -54,15 +61,35 @@
     </div>
     
     <div class="h2 ribbon-wrapper">
+      <div class="ribbon-front">Make some noise</div>
+      <div class="ribbon-edge-topleft"></div>   <div class="ribbon-edge-topright"></div>
+      <div class="ribbon-edge-bottomleft"></div><div class="ribbon-edge-bottomright"></div>
+      <div class="ribbon-back-left"></div>      <div class="ribbon-back-right"></div>
+    </div>
+    <div class="text">
+      <p>
+        <div id="fb-root"></div>
+        <script src="http://connect.facebook.net/en_US/all.js#appId=137646366318157&amp;xfbml=1"></script>
+        <fb:like href="http://nettofarah.github.com/grooveshark-lyrics/" send="true" layout="button_count" width="450" show_faces="true" font=""></fb:like>
+      </p>
+      <p>
+        <a href="http://twitter.com/share" class="twitter-share-button" data-text="what about lyrics in grooveshark? try it http://t.co/cKk2jT1" data-count="horizontal" data-via="nettofarah" data-related="gtramontina:lucastorri">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+      </p>      
+    </div>
+
+    <div class="h2 ribbon-wrapper">
       <div class="ribbon-front">Github</div>
       <div class="ribbon-edge-topleft"></div>   <div class="ribbon-edge-topright"></div>
       <div class="ribbon-edge-bottomleft"></div><div class="ribbon-edge-bottomright"></div>
       <div class="ribbon-back-left"></div>      <div class="ribbon-back-right"></div>
     </div>
     <div class="text">
-      <p>You can clone the project with Git by running:</p>
-      <pre>$ git clone git://github.com/nettofarah/grooveshark-lyrics</pre>      
+      <center>
+        <p>You can clone the project with Git by running:</p>
+        <pre>$ git clone git://github.com/nettofarah/grooveshark-lyrics</pre>      
+      </center>
     </div>
+
   </div>
 </body>
 </html>
