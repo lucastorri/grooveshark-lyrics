@@ -4,7 +4,7 @@
   "description": "Add lyrics to GrooveShark",
   "browser_action": {
     "default_icon": "icon.png",
-    "default_title": "Click me!",
+    "default_title": "Grooveshark Lyrics",
     "default_popup": "popup.html"
   },
     
