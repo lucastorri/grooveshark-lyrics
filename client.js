@@ -1,11 +1,15 @@
 var played = 0;
 
 var songInfo = function(){
-	if (!Grooveshark._lastStatus) return null;
-	return{
-		music: Grooveshark._lastStatus.activeSong.SongName,
-		artist: Grooveshark._lastStatus.activeSong.ArtistName
-	}; 
+  try {
+    if (!Grooveshark._lastStatus) return null;
+    return{
+      music: Grooveshark._lastStatus.activeSong.SongName,
+      artist: Grooveshark._lastStatus.activeSong.ArtistName
+    };
+  } catch(e) {
+    return null;
+  }
 };
 
 var sameMusic = function(current, old){
