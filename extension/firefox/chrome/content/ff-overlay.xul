@@ -10,7 +10,7 @@
   </stringbundleset>
 
   <toolbarpalette id="BrowserToolbarPalette">
-    <toolbarbutton id="grooveshark_lyrics_button" oncommand="gsl.start()"/>
+    <toolbarbutton id="grooveshark-lyrics-button" oncommand="gsl.start()"/>
   </toolbarpalette>
   
 

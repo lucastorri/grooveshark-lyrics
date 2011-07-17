@@ -1,1 +1,1 @@
-zip -r grooveshark_lyrics.xpi chrome chrome.manifest defaults install.rdf
+zip -r grooveshark_lyrics.xpi chrome chrome.manifest install.rdf

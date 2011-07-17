@@ -1,5 +1,5 @@
 var addButton = function () {
-  var buttonId = "grooveshark-lyrics";
+  var buttonId = "grooveshark-lyrics-button";
   var navId = "nav-bar";
 
   var nav = document.getElementById(navId);
