@@ -3,7 +3,7 @@
 <script>
   chrome.tabs.getSelected(null, function(tab) {
    chrome.tabs.executeScript(tab.id, {
-    code: "var gslScript = document.createElement('script');gslScript.setAttribute('type','text/javascript');gslScript.setAttribute('charset','UTF-8');gslScript.setAttribute('src','https://raw.github.com/nettofarah/grooveshark-lyrics/client/client.js');document.body.appendChild(gslScript);window.close();"
+     code: "var execIt = function () { var gslScript = document.createElement('script');gslScript.setAttribute('type','text/javascript');gslScript.setAttribute('charset','UTF-8');gslScript.setAttribute('src','https://raw.github.com/nettofarah/grooveshark-lyrics/client/client.js');document.body.appendChild(gslScript);window.close(); }; if(/grooveshark\.com/.exec(document.location.href) == null) { document.location='http://grooveshark.com';window.addListener('load', execIt, false); } else { execIt(); }" 
    });
   });
 </script>
