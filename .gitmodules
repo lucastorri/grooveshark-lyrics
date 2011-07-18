@@ -1,0 +1,3 @@
+[submodule "extension/safari"]
+	path = extension/safari
+	url = git@github.com:lucastorri/grooveshark-lyrics-safari.git
