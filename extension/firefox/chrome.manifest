@@ -1,0 +1,6 @@
+content   whi                 chrome/content/
+skin      whi   classic/1.0   chrome/skin/
+locale    whi   en-US         chrome/locale/en-US/
+
+
+overlay   chrome://browser/content/browser.xul   chrome://whi/content/ff-overlay.xul

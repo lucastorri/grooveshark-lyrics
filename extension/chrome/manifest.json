@@ -1,0 +1,17 @@
+{
+  "name": "Grooveshark Lyrics",
+  "version": "0.1",
+  "description": "Add lyrics to GrooveShark",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "Grooveshark Lyrics",
+    "default_popup": "popup.html"
+  },
+    
+  "permissions": [
+    "tabs",
+    "https://raw.github.com/",
+    "http://*/*",
+    "https://*/*"
+  ]
+}
