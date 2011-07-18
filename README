@@ -1,3 +1,4 @@
-spyke to get the lyrics for the current song on grooveshark
-
-Client
+Grooveshark Lyrics
+------------------
+ * Script to be injected into client's Grooveshark instance.
+ * Browser extensions: Chrome, Firefox and Safari.
